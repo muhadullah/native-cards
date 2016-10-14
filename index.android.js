@@ -1,53 +1,51 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, Text, View, Image, StyleSheet} from 'react-native';
 
-class NativeCards extends Component {
+class NewProject extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
+         <View style = {styles.card}>
+            <Text style={styles.cardLetter}>{this.props.letter}</Text> //how does 'this' work
+            <Text style={styles.cardName}>{this.props.name}</Text>
+         </View>
+            );
+         }
+     }
+
+class NativeCards extends Component{ //need to setup NativeCards folder / directory
+render() {
+		return (
+			<View style={styles.container}>
+				<Card letter="أ" />
+				<Card letter="ب‎" />
+				<Card letter="ت‎" />
+				<Card letter="ث" />
+				<Card letter="ج" />
+				<Card letter="ح" />
+				<Card letter="خ" />
+				<Card letter="د" />
+			</View>
+		);
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
+    container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    },
+
+    card: {}, //why is this empty
+    cardLetter: {
+        fontSize: 24
+     },
+     cardName: {
+        fontSize:16
+        }
 });
 
-AppRegistry.registerComponent('NativeCards', () => NativeCards);
+
+
+AppRegistry.registerComponent('NewProject', () => NewProject);
